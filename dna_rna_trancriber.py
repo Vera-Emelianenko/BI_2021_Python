@@ -53,7 +53,7 @@ def main():
 
         # checks if the command is valid - if not, promts the user for the command again
         elif command not in ['transcribe', 'reverse', 'complement', 'reversecomplement', 'complementRNA']:
-            print('''Invalid command. 
+            print('''Invalid command.
 Valid commands are 'transcribe', 'reverse', 'complement', 'reverse complement',
 'complement RNA', 'exit'. Type 'help' for more information''')
             continue
