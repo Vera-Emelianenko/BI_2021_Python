@@ -3,7 +3,7 @@ This repo was created as part of the python course at [Bioinformatics institute]
 
 # Files 
 
-## Homework1 
+### Homework1 
 File `dna_rna_trancriber.py`. 
 
 Program that works with sequences of nucleic acids. 
