@@ -38,7 +38,7 @@ def main():
     while True:
         # promts user for command
         command = input("Enter command: ").replace(" ", "")
-        
+
         # exits if user wants to
         if command == 'exit' or command == 'exit()':
             print('Good luck!')
@@ -53,7 +53,9 @@ def main():
 
         # checks if the command is valid - if not, promts the user for the command again
         elif command not in ['transcribe', 'reverse', 'complement', 'reversecomplement', 'complementRNA']:
-            print("Invalid command. Valid commands are 'transcribe', 'reverse', 'complement', 'reverse complement', 'complement RNA', 'exit'. Type 'help' for more information")
+            print('''Invalid command. 
+Valid commands are 'transcribe', 'reverse', 'complement', 'reverse complement',
+'complement RNA', 'exit'. Type 'help' for more information''')
             continue
 
         # starts an infinite loop to accept sequence unti it has correct alphabet
@@ -65,8 +67,8 @@ def main():
 
             # checks sequence correctness - it should be RNA or DNA
             if not check(sequence):
-                print ("Invalid alphabet. Check for 'N's. Try again or type 'exit' to choose a new command")
-            else: 
+                print("Invalid alphabet. Check for 'N's. Try again or type 'exit' to choose a new command")
+            else:
                 # executes the chosen command
                 if command == 'transcribe':
                     print(transcribe(sequence))
@@ -82,15 +84,18 @@ def main():
 
 # functions declaration
 
+
 def transcribe(sequence):
     # replaces Ts for Us case sensitive
     sequence_transcribed = sequence.replace("T", "U").replace("t", "u")
     return(sequence_transcribed)
 
+
 def reverse(sequence):
     # takes the string in the reverse order
     sequence_reversed = sequence[::-1]
     return(sequence_reversed)
+
 
 def complement(sequence):
     # prints a sequence complement to given, uses DNA alphabet by default
@@ -98,22 +103,25 @@ def complement(sequence):
         # use U and u as a complement for A and a
         transTable = sequence.maketrans("agcuAGCU", "ucgaUCGA")
         sequence_complement = sequence.translate(transTable)
-    else: 
+    else:
         # uses T and t as a complement for A and a
         transTable = sequence.maketrans("agctAGCT", "tcgaTCGA")
         sequence_complement = sequence.translate(transTable)
     return(sequence_complement)
+
 
 def revcom(sequence):
     # prints reverse complement of a sequence
     sequence_revcom = reverse(complement(sequence))
     return(sequence_revcom)
 
+
 def complementRNA(sequence):
     # prints complement of a sequence, using 'U' as a complement of 'A'
     transTable = sequence.maketrans("agcutAGCUT", "ucgaaUCGAA")
     sequence_RNAcomplement = sequence.translate(transTable)
     return(sequence_RNAcomplement)
+
 
 def check(sequence):
     # checks that sequence contains only letters found in DNA or RNA alphabets
@@ -122,6 +130,7 @@ def check(sequence):
         return(True)
     else:
         return(False)
+
 
 # call main function so it's executed
 main()
