@@ -28,6 +28,12 @@ The use of 'N' is not supported!
 dna_alphabet = {'a', 't', 'g', 'c'}
 rna_alphabet = {'a', 'u', 'g', 'c'}
 
+invalid_command_message = '''Invalid command.
+Valid commands are 'transcribe', 'reverse', 'complement', 'reverse complement',
+'complement RNA', 'exit'. Type 'help' for more information'''
+
+valid_commands_list = ['transcribe', 'reverse', 'complement', 'reversecomplement', 'complementRNA']
+
 
 # define main function
 def main():
@@ -52,10 +58,8 @@ def main():
             continue
 
         # checks if the command is valid - if not, promts the user for the command again
-        elif command not in ['transcribe', 'reverse', 'complement', 'reversecomplement', 'complementRNA']:
-            print('''Invalid command.
-Valid commands are 'transcribe', 'reverse', 'complement', 'reverse complement',
-'complement RNA', 'exit'. Type 'help' for more information''')
+        elif command not in valid_commands_list:
+            print(invalid_command_message)
             continue
 
         # starts an infinite loop to accept sequence unti it has correct alphabet
