@@ -1,3 +1,30 @@
+help_message = '''
+This is a program that works with sequences of nucleic acids. It was created as a homework for python course in Bioinformatics institute 2021.
+Commands:
+
+exit - exits the program 
+help - prints this help message and waits for the next command
+trancribe - prints the transcribed coding string of DNA to RNA 
+(so it will give the same string but with all 'T' replaced by 'U'). Returns the same string if input is an RNA string. 
+Example: ATGCA -> AUGCA
+reverse - prints the reversed sequence 
+Example: ATGCA -> ACGTA
+complement - prints the complement sequence 
+If the sequence can be either DNA or RNA (e. g. "AGGGCCCA"), the complement string is generated as DNA (e. g. "TCCCGGGA" and not "UCCCGGGA")
+If you want to get complement of an RNA string that does not contain uracil, use 'complement RNA'
+Example: ATGCA -> TACGT
+reverse complement - prints reverse complement sequence. 
+If the sequence can be either DNA or RNA, the reverse complement string is generated as DNA
+Example: ATGCA -> TGCAT
+complement RNA - prints complement sequence, forced to use 'U' as a complement of 'A' 
+Example: AGGGCCCA -> UCCCGGGA
+The program preserves the case (e. g. complement from 'AtGc' will be 'TaCg')
+The program will correct the user that tries to use the sequence with incorrect alphabet (e.g. 'ATGCP' or 'GttCU'). The use of 'N' is not supported!
+'''
+
+dna_alphabet = {'a', 't', 'g', 'c'}
+rna_alphabet = {'a', 'u', 'g', 'c'}
+
 # define main function 
 def main():
 	# in case user has zero idea about what is this file, promts him to use the help message
@@ -87,37 +114,11 @@ def complementRNA(sequence):
 
 def check(sequence):
 	# checks that sequence contains only letters found in DNA or RNA alphabets
-	dna_alphabet = {'a', 't', 'g', 'c'}
-	rna_alphabet = {'a', 'u', 'g', 'c'}
-	sequence_alphabet = set(sequence.casefold())
+	sequence_alphabet = set(sequence.casefold()) 
 	if sequence_alphabet.issubset(dna_alphabet) or sequence_alphabet.issubset(rna_alphabet):
 		return(True)
 	else:
 		return(False)
 
-help_message = '''
-This is a program that works with sequences of nucleic acids. It was created as a homework for python course in Bioinformatics institute 2021.
-Commands:
-
-exit - exits the program 
-help - prints this help message and waits for the next command
-trancribe - prints the transcribed coding string of DNA to RNA 
-(so it will give the same string but with all 'T' replaced by 'U'). 
-Example: ATGCA -> AUGCA
-reverse - prints the reversed sequence 
-Example: ATGCA -> ACGTA
-complement - prints the complement sequence 
-If the sequence can be either DNA or RNA (e. g. "AGGGCCCA"), the complement string is generated as DNA (e. g. "TCCCGGGA" and not "UCCCGGGA")
-If you want to get complement of an RNA string that does not contain uracil, use 'complement RNA'
-Example: ATGCA -> TACGT
-reverse complement - prints reverse complement sequence. 
-If the sequence can be either DNA or RNA, the reverse complement string is generated as DNA
-Example: ATGCA -> TGCAT
-complement RNA - prints complement sequence, forced to use 'U' as a complement of 'A' 
-Example: AGGGCCCA -> UCCCGGGA
-The program preserves the case (e. g. complement from 'AtGc' will be 'TaCg')
-The program will correct the user that tries to use the sequence with incorrect alphabet (e.g. 'ATGCP' or 'GttCU'). The use of 'N' or white spaces is not supported!
-
-'''
-# call main function so it's exited
+# call main function so it's executed
 main()
