@@ -193,8 +193,8 @@ def pass_gc_bounds(line, i, gc_bounds):
     # if line contains nucleotides
     if (2 + i) % 4 == 0:
         # calculate GC content
-        gc_content = 100*(line.count('G')+line.count('C'))/
-                    (line.count('T')+line.count('A')+line.count('G')+line.count('C'))
+        gc_content = 100*(line.count('G')+line.count('C'))/(
+                    line.count('T')+line.count('A')+line.count('G')+line.count('C'))
         if gc_content > gc_bounds[0] and gc_content < gc_bounds[1]:
             return (True)
         else:
