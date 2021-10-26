@@ -94,7 +94,7 @@ def take_user_input():
 
 # define main function
 def main(input_fastq, output_file_prefix, gc_bounds=[0, 100],
-        length_bounds=[0, 2**32], quality_threshold=0, save_filtered=False):
+            length_bounds=[0, 2**32], quality_threshold=0, save_filtered=False):
     # count how many reads pass the filter
     # it was not required in the task but it is useful to know both for code testing and for real work
     written_passed_reads = 0
@@ -106,8 +106,8 @@ def main(input_fastq, output_file_prefix, gc_bounds=[0, 100],
         sys.exit("Output file directory not found, can't create output file")
     # if we want to save failed reads, we need to open one more file
     if save_filtered:
-        # I don't check for the directory here 
-        #because output_file_prefix is the same and the file is created de novo anyways
+        # I don't check for the directory here
+        # because output_file_prefix is the same and the file is created de novo anyways
         new_file2 = open(output_file_prefix + '_failed.fastq', "w")
         written_failed_reads = 0
     # try opening input file
@@ -126,7 +126,8 @@ def main(input_fastq, output_file_prefix, gc_bounds=[0, 100],
             # iterate over each line of the file
             # I purpusfully don't open the whole file at once because .fastq file may be very big (several Mb or more)
             # so I don't want to hold this amount of data in the memory
-            # that is why I open one line at a time, write it down to the list and then empty the list once the read is over
+            # that is why I open one line at a time,
+            # write it down to the list and then empty the list once the read is over
             # this introduces trailing \n in one of the files (.passed.fastq) or (failed.fastq)
             # I don't know how to solve this problem elegantly
             # but at least I tested the program on 122M .fastq file and it performed fine (less than a minute)
@@ -210,9 +211,9 @@ def pass_length_bounds(line, i, length_bounds):
     if (2 + i) % 4 == 0:
         if len(line) > length_bounds[0] and len(line) < length_bounds[1]:
             return (True)
-        else: 
+        else:
             return (False)
-    else: 
+    else:
         return (True)
 
 
