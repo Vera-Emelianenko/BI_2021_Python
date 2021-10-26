@@ -94,7 +94,7 @@ def take_user_input():
 
 # define main function
 def main(input_fastq, output_file_prefix, gc_bounds=[0, 100],
-            length_bounds=[0, 2**32], quality_threshold=0, save_filtered=False):
+         length_bounds=[0, 2**32], quality_threshold=0, save_filtered=False):
     # count how many reads pass the filter
     # it was not required in the task but it is useful to know both for code testing and for real work
     written_passed_reads = 0
