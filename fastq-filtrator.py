@@ -209,10 +209,7 @@ def pass_gc_bounds(line, i, gc_bounds):
 def pass_length_bounds(line, i, length_bounds):
     line = line.strip()
     if (2 + i) % 4 == 0:
-        if len(line) > length_bounds[0] and len(line) < length_bounds[1]:
-            return (True)
-        else:
-            return (False)
+        return length_bounds[0] <= len(line) <= length_bounds[1]
     else:
         return (True)
 
