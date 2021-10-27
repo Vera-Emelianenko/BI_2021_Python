@@ -62,7 +62,7 @@ def main():
             print(invalid_command_message)
             continue
 
-        # starts an infinite loop to accept sequence unti it has correct alphabet
+        # starts an infinite loop to accept sequence until it has correct alphabet
         while True:
             # prompts user for sequence. Removes any whitespaces.
             sequence = input("Enter sequence: ").replace(" ", "")
