@@ -1,5 +1,10 @@
 help_message = '''
 This program converts some volume units to cubic metre.
+available units: 'dm3', 'cm3', 'mm3', 'L', 'mL', 'yd3', 'ft3', 'in3'
+Usage example:
+\t python units_converter.py
+\t Enter number and volume units, separated by whitespace: 
+\t 40 L
 '''
 invalid_unit_message = '''
 Could not recognise units.
@@ -15,12 +20,12 @@ valid_units_dict = {'dm3': 0.001, 'cm3': 0.001*0.001, 'mm3': 0.001*0.001*0.001,
 # define main function
 def main():
     # in case user has zero idea about what is this file, promts him to use the help message
-    print("Type 'help' for more information. Type 'exit' to finish the program")
+    print('''Type 'help' for more information. Type 'exit' to finish the program.''')
 
     # starts an infinite loop to take user's orders
     while True:
         # promts user for command
-        command = input("Enter number and units, separated by whitespace: ")
+        command = input("Enter number and volume units, separated by whitespace: ")
 
         # exits if user wants to
         if command.replace(" ", "") == 'exit' or command.replace(" ", "") == 'exit()':
@@ -38,6 +43,9 @@ def main():
         elif command.split()[-1] not in valid_units_dict:
             print(invalid_unit_message)
             continue
+
+        elif command.split()[0].startswith("-"): 
+            print ('Please use positive number to convert')
 
         else:
             number_in_metres = valid_units_dict[command.split()[1]]*float(command.split()[0])
