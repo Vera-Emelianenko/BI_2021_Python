@@ -3,7 +3,7 @@ This program converts some volume units to cubic metre.
 available units: 'dm3', 'cm3', 'mm3', 'L', 'mL', 'yd3', 'ft3', 'in3'
 Usage example:
 \t python units_converter.py
-\t Enter number and volume units, separated by whitespace: 
+\t Enter number and volume units, separated by whitespace:
 \t 40 L
 '''
 invalid_unit_message = '''
@@ -16,6 +16,7 @@ valid_units_dict = {'dm3': 0.001, 'cm3': 0.001*0.001, 'mm3': 0.001*0.001*0.001,
                     'yd3': 0.764554857984, 'ft3': 0.001*28.316846592, 'in3': 16.387064*0.001*0.001,
                     'bl': 158.987295*0.001, 'pt': 0.473176473*0.001, 'oz': 29.573531*0.001*0.001
                     }
+
 
 # let's define main function
 def main():
