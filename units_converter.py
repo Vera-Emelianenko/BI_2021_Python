@@ -44,8 +44,8 @@ def main():
             print(invalid_unit_message)
             continue
 
-        elif command.split()[0].startswith("-"): 
-            print ('Please use positive number to convert')
+        elif command.split()[0].startswith("-"):
+            print('Please use positive number to convert')
 
         else:
             number_in_metres = valid_units_dict[command.split()[1]]*float(command.split()[0])
