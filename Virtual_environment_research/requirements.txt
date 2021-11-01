@@ -1,0 +1,12 @@
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+aiohttp
+kivy
+Bio
+bs4
+pandas 
+scipy
+scanpy
+opencv-python
+lxml
