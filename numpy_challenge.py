@@ -7,7 +7,7 @@ if __name__ == "__main__":
 
 def matrix_multiplication(a1,a2):
     if a1.shape[1] == a2.shape[0]:
-        result = np.full((a1.shape[0], a2.shape[1]),0)
+        result = np.zeros((a1.shape[0], a2.shape[1]))
         for i in range(a1.shape[1]): 
             for j in range (a1.shape[1]): 
                 result[i,j] = sum(a1[i,:]*a2[:,j])
