@@ -3,7 +3,7 @@ if __name__ == "__main__":
     # create 3 arrays in np
     # first array - from python object
     array1 = np.array([1.5, 2.1, 3.6, 4.8, 5.5, 6.1, 7.0, 8.4, 9.2, 10.9])
-    # second array - using .full function 
+    # second array - using .full function
     array2 = np.full((15, 10), 0)
     # third array  - using arrange
     array3 = np.arange(0, 100, 2.5)
@@ -53,7 +53,7 @@ def multiplication_check(list_of_matrices):
     Returns:
     bool: True if matrices can be multiplied, False if they can't
     """
-    for i in range (1, len(list_of_matrices)):
+    for i in range(1, len(list_of_matrices)):
         if list_of_matrices[i-1].shape[1] != list_of_matrices[i].shape[0]:
             return False
     return True
@@ -70,7 +70,7 @@ def multiply_matrices(list_of_matrices):
     """
     if multiplication_check(list_of_matrices):
         res = list_of_matrices[0]
-        for i in range (1, len(list_of_matrices)):
+        for i in range(1, len(list_of_matrices)):
             res = np.matmul(res, list_of_matrices[i])
         return res
     else:
