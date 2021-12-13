@@ -36,6 +36,7 @@ chmod +x rm.py
 chmod +x ls.py
 chmod +x sort.py
 chmod +x wc.py
+chmod +x cat.py
 ```
 
 Then, you can run the scripts from the current directory without prefixing them with `python`: 
@@ -53,6 +54,7 @@ To test that all scripts work, you may try the following
 mkdir testdir
 touch testdir/testfile
 ./rm.py testdir -r
+./cat.py test.txt
 ```
 
 ## Files description
@@ -119,7 +121,23 @@ Usage:
 ```
 
 flags:
+
 `-r` remove recoursively   
+`-h` - prints help message and exits
+
+
+#### File `cat.py`.
+
+Program that is `cat` analog in python to print the file contents to the screen or stdout. Can be used to concatenate files.
+
+Usage: 
+
+```
+./cat.py [-h] [file [file ...]]
+```
+
+flags:   
+
 `-h` - prints help message and exits
 
 ## Contributors

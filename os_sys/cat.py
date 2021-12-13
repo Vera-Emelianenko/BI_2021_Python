@@ -16,9 +16,9 @@ if args.file:
         with open(file, 'r') as input_file:
             input = input_file.readlines()
             for line in input:
-                print(line, end = '')
+                print(line, end='')
 
 else:
     input = sys.stdin
     for line in input:
-        print(line, end = '')
+        print(line, end='')
