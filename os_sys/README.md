@@ -8,11 +8,11 @@ The advantages of using our .py scripts in comparison with basic command line to
  - have less options (less chanses to get confused!)
  - need to be made executable or run with python in front of them (you can be sure not to run them accidentally!)
  - have higher probability to though some error (you will have more fun!)
- - work slower (you can go and drink your coffee while the program is working for you)
+ - work slower (with really big input, you can go and drink your coffee while the program is working for you)
 
 ## Installation
 
-The installation process does not rely on distinct OS features and can be applied for Windows, Linux and Mac systems. The script is supposed to be run from bash-like command line. To use it on Windows, please install Windows Subsystem for Linux (WSL) (this [user guide](https://www.windowscentral.com/install-windows-subsystem-linux-windows-10) can help you). Then you can run the commands in the WSL command line. The script is written and tested in Python 3.8, and the installation process assumes you have python3 on your mashine. You can check the current version of python using `python --version`. To install or update Python, visit [www.python.org](https://www.python.org/downloads/).The scripts were tested in WSL1 Ubuntu-20.04 in Windows Terminal 1.11.2921.0 in Microsoft Windows [Version 10.0.19043.1288] (Windows 10 Home Version 21H1), Python 3.8.5. The scripts use only standart libraries: 
+The scripts are supposed to be run from bash-like command line. To use it on Windows, please install Windows Subsystem for Linux (WSL) (this [user guide](https://www.windowscentral.com/install-windows-subsystem-linux-windows-10) can help you). Then you can run the commands in the WSL command line. The script is written and tested in Python 3.8, and the installation process assumes you have python3 on your mashine. You can check the current version of python using `python --version`. To install or update Python, visit [www.python.org](https://www.python.org/downloads/). The scripts were tested in WSL1 Ubuntu-20.04 in Windows Terminal 1.11.2921.0 in Microsoft Windows [Version 10.0.19043.1288] (Windows 10 Home Version 21H1), Python 3.8.5. The scripts use only standart libraries: 
 
 #### Downloading
 You can download the archive with wc.py, ls.py, rm.py and sort.py using wget:
@@ -72,10 +72,10 @@ If no file is specified, the program reads the input from stdin.
 
 flags:
 
-`-c` - count bytes
-`-l` - count lines
+`-c` - count bytes   
+`-l` - count lines   
 `-w` - count words   
-`-h` - prints help message and exits
+`-h` - prints help message and exits   
 
 #### File `ls.py`.
 
@@ -90,7 +90,7 @@ If no derectory is specified, the program will list the contents of the current 
 
 flags:
 
-`-a` - do not ignore entries starting with .
+`-a` - do not ignore entries starting with .   
 `-h` - prints help message and exits
 
 #### File `sort.py`.
@@ -119,7 +119,7 @@ Usage:
 ```
 
 flags:
-`-r` remove recoursively
+`-r` remove recoursively   
 `-h` - prints help message and exits
 
 ## Contributors
