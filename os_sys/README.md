@@ -18,46 +18,110 @@ The installation process does not rely on distinct OS features and can be applie
 You can download the archive with wc.py, ls.py, rm.py and sort.py using wget:
 
 ```
-wget https://github.com/Vera-Emelianenko/BI_2021_fastqc/archive/refs/heads/main.zip
-unzip main.zip
-cd BI_2021_fastqc-main
+wget https://github.com/Vera-Emelianenko/BI_2021_Python/archive/refs/heads/os_sys.zip
+unzip os_sys.zip
+cd BI_2021_Python-os_sys/os_sys
 ```
-Alternatively, the archive with the content of the project can be downloaded via visual interface of GitHub. Go to *main* branch, choose green button "Code" on the upper right and download zip. Zip archive might be unpacked with any tool you have or with unzip (`unzip BI_2021_fastqc.zip`)
 
-You can also download the project via git clone: 
+To run scripts, print `python script.py`, where script.py is a name of the script you want to run, e. g.
 ```
-git clone https://github.com/Vera-Emelianenko/BI_2021_fastqc.git
+python ls.py
+```
+
+#### Making files executable
+In theory, files should be executable when downloaded. However, you may want to make them executable yourself: 
+
+```
+chmod +x rm.py
+chmod +x ls.py
+chmod +x sort.py
+chmod +x wc.py
+```
+
+Then, you can run the scripts from the current directory without prefixing them with `python`: 
+
+```
+./ls.py
+```
+
+#### Testing the scripts
+To test that all scripts work, you may try the following
+```
+./ls.py
+./wc.py test.txt -l -c -w
+./sort.py test.txt
+mkdir testdir
+touch testdir/testfile
+./rm.py testdir -r
+```
+
+## Files description
+
+All programs have option -h (--help). 
+
+#### File `wc.py`.
+
+Program that is `wc` analog in python to count lines, words, bytes
+
+Usage: 
+
+```
+./wc.py [-h] [-l] [-w] [-c] [file [file ...]]
+```
+If no file is specified, the program reads the input from stdin. 
+
+flags:
+
+`-c` - count bytes
+`-l` - count lines
+`-w` - count words   
+`-h` - prints help message and exits
+
+#### File `ls.py`.
+
+Program that is `ls` analog in python to list all files and directories in a specified directory. 
+
+Usage: 
+
+```
+./ls.py [-h] [-a] [directory [directory ...]]
+```
+If no derectory is specified, the program will list the contents of the current directory ('./'). 
+
+flags:
+
+`-a` - do not ignore entries starting with .
+`-h` - prints help message and exits
+
+#### File `sort.py`.
+
+Program that is `sort` analog in python to sort an input file/
+
+Usage: 
+
+```
+./sort.py [-h] [file [file ...]]
+```
+If no file is specified, the program reads the input from stdin.
+
+flags:
+
+`-h` - prints help message and exits
+
+#### File `rm.py`.
+
+Program that is `rm` analog in python to remove files or files and directories (if run recoursively).
+
+Usage: 
+
+```
+./rm.py [-h] [-r] [file_or_dir [file_or_dir ...]]
+```
+
+flags:
+`-r` remove recoursively
+`-h` - prints help message and exits
 
 ## Contributors
 
 - Vera Emelianenko [@Vera-Emelianenko](https://github.com/Vera-Emelianenko) wrote wc.py, ls.py, rm.py, sort.py, README. 
-
-
-File `dna_rna_trancriber.py`. 
-
-Program that works with sequences of nucleic acids. 
-
-Commands:
-
-`exit` - exits the program   
-`help` - prints this help message and waits for the next command  
-`trancribe` - prints the transcribed coding string of DNA to RNA   
-(so it will give the same string but with all 'T' replaced by 'U'). 
-! Returns the same string if input is an RNA string.   
-Example: ATGCA -> AUGCA  
-`reverse` - prints the reversed sequence   
-Example: ATGCA -> ACGTA  
-`complement` - prints the complement sequence   
-If the sequence can be either DNA or RNA (e. g. "AGGGCCCA"), the complement string is generated as DNA (e. g. "TCCCGGGA" and not "UCCCGGGA").  
-If you want to get complement of an RNA string that does not contain uracil, use 'complement RNA'.  
-Example: ATGCA -> TACGT  
-`reverse complement` - prints reverse complement sequence.   
-If the sequence can be either DNA or RNA, the reverse complement string is generated as DNA  
-Example: ATGCA -> TGCAT  
-`complement RNA` - prints complement sequence, forced to use 'U' as a complement of 'A'   
-Example: AGGGCCCA -> UCCCGGGA  
-
-The program preserves the case (e. g. complement from 'AtGc' will be 'TaCg').  
-The program will correct the user that tries to use the sequence with incorrect alphabet (e.g. 'ATGCP' or 'GttCU').   
-! The use of 'N' or white spaces is not supported!  
-

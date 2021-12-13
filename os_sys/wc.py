@@ -5,10 +5,10 @@
 import sys
 import argparse
 
-parser = argparse.ArgumentParser(description='Count lines')
+parser = argparse.ArgumentParser(description='Count lines, words, bytes')
 parser.add_argument('-l', default=False, action='store_true', help='print the line counts')
-parser.add_argument('-w', default=False, action='store_true', help='print the word count')
-parser.add_argument('-c', default=False, action='store_true', help='print the byte count')
+parser.add_argument('-w', default=False, action='store_true', help='print the word counts')
+parser.add_argument('-c', default=False, action='store_true', help='print the byte counts')
 parser.add_argument('file', default='', metavar='file', type=str, nargs='*', help='file to be processed')
 
 args = parser.parse_args()
