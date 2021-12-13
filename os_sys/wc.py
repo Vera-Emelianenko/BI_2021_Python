@@ -3,7 +3,6 @@
 # wc analog with options -l -w- c
 
 import sys
-import os
 import argparse
 
 parser = argparse.ArgumentParser(description='Count lines')
@@ -20,7 +19,7 @@ bytes = 0
 
 if args.file:
     with open (args.file[0], 'r') as input_file:
-         input = input_file.readlines()
+        input = input_file.readlines()
 else:
     input = sys.stdin
 
@@ -28,9 +27,9 @@ for line in input:
     if args.l:
         lines += 1
     if args.w:
-        words+= len(line.split())
+        words += len(line.split())
     if args.c:
-        bytes+= len (line.encode('utf-8'))
+        bytes += len(line.encode('utf-8'))
 
 if args.l:
     print(lines)
