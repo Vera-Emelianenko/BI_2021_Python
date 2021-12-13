@@ -19,4 +19,4 @@ else:
 sorted_list = sorted(input)
 
 for item in sorted_list:
-    print(item, end ='')
+    print(item, end='')
