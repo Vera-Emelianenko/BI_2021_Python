@@ -12,11 +12,11 @@ args = parser.parse_args()
 
 if args.file:
     with open(args.file[0], 'r') as input_file:
-         input = input_file.readlines()
+        input = input_file.readlines()
 else:
     input = sys.stdin.readlines()
 
 sorted_list = sorted(input)
 
-for item in sorted_list: 
-    print(item, end = '')
+for item in sorted_list:
+    print(item, end ='')

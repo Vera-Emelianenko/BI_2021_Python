@@ -7,7 +7,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description='List all files/directories in the directory')
 parser.add_argument('-a', default=False, action='store_true', help='do not ignore entries starting with .')
-parser.add_argument('directory', default='./', metavar='file', type=str, nargs='*', help='file to be processed, default ./')
+parser.add_argument('directory', default='./', type=str, nargs='*', help='directory to be listed, default ./')
 
 args = parser.parse_args()
 path = args.directory[0]

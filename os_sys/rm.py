@@ -8,9 +8,10 @@ import argparse
 
 parser = argparse.ArgumentParser(description='List all files/directories in the directory')
 parser.add_argument('-r', default=False, action='store_true', help='remove recoursively .')
-parser.add_argument('file_or_dir', default='./', metavar='file', type=str, nargs='*', help='file to be processed, default ./')
+parser.add_argument('file_or_dir', type=str, nargs='*', help='file to be deleted, default ./')
 
 args = parser.parse_args()
+
 
 def removal(dir):
     for file in dir:
@@ -18,7 +19,7 @@ def removal(dir):
             sys.exit(f'rm.py: cannot remove {file}: file does not exist')
         if os.path.isdir(file):
             if not args.r:
-               sys.exit(f'rm.py: cannot remove {file}: Is a directory')
+                sys.exit(f'rm.py: cannot remove {file}: Is a directory')
             else:
                 if any(os.scandir(file)):
                     removal([os.path.join(file, child) for child in os.listdir(file)])
@@ -29,5 +30,6 @@ def removal(dir):
                     os.removedirs(file)
         else:
             os.remove(file)
+
 
 removal(args.file_or_dir)

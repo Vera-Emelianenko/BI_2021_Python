@@ -18,7 +18,7 @@ words = 0
 bytes = 0
 
 if args.file:
-    with open (args.file[0], 'r') as input_file:
+    with open(args.file[0], 'r') as input_file:
         input = input_file.readlines()
 else:
     input = sys.stdin
