@@ -4,6 +4,7 @@ def sequential_map(*args):
         result = [function(i) for i in result]
     return result
 
+
 def consensus_filter(*args):
     container = args[-1]
     for function in args[:-1]:
