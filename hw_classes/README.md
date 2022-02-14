@@ -17,7 +17,7 @@ Be aware that the classes require some libraries mentioned in requirements.py, i
 You can download the archive with myfasta.py, myrna.py, mybacterialchromosome.py, myset.py, Test_classes_notebook.ipynb, Test_classes_notebook_with_class_definition.ipynb and example .gb and .fasta files using wget: 
 
 ```
-wget 
+wget https://github.com/Vera-Emelianenko/BI_2021_Python.git
 unzip hw_classes.zip
 cd BI_2021_Python-hw_classes/hw_classes
 ```
