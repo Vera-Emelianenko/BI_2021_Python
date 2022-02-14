@@ -1,9 +1,11 @@
 
 class MySet(set):
-    
-    """a class that inherits from sets, contains only positive numbers when created and will not add non-positive values"""
-    
-    def __init__ (self, *args):
+
+    """a class that inherits from sets,
+       contains only positive numbers when created
+       and will not add non-positive values"""
+
+    def __init__(self, *args):
         # * args can contain several iterable items
         # first I create a list to contain alll the elements from those items
         self.modified_args = []
