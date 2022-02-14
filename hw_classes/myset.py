@@ -18,7 +18,7 @@ class MySet(set):
                     self.modified_args.append(element)
         # call _init_ of the parent, giving him the new list
         super().__init__(self.modified_args)
-        
+
     # adds only positive elements
     def add(self, element):
         # again, checking that it is a number and if yes, that this number is positive
