@@ -123,7 +123,7 @@ class Fasta():
     def metrics(self):
         print('Number of sequences: ', self.count_seqs())
         print('Average GC-content: ', self.gc_average())
-        print(f"{self.count_n()['seqs']} sequences contating 'N' characters,"
+        print(f"{self.count_n()['seqs']} sequences contating 'N' characters,")
         print(f"{self.count_n()['n']} 'N' characters in total")
         self.plot_len()
         self.plot_gc_hist()

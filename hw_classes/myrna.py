@@ -20,7 +20,7 @@ class MyRNA:
         my_rna = Seq(self.sequence)
         my_aa = str(my_rna.translate())
         return my_aa
- 
+
     def back_transcribe(self):
 
         """Reverse transcription method - returns a DNA string that corresponds to this RNA"""
