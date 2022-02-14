@@ -83,7 +83,7 @@ class Fasta():
                         self.k_mers_dict[kmer] = 1
                     else:
                         self.k_mers_dict[kmer] += 1
-            self.k_mers_dict = dict(sorted(self.k_mers_dict.items(), key=lambda item:item[1], reverse=True))
+            self.k_mers_dict = dict(sorted(self.k_mers_dict.items(), key=lambda item: item[1], reverse=True))
         k_mer_names = list(self.k_mers_dict.keys())
         k_mer_counts = list(self.k_mers_dict.values())
         sum_of_counts = sum(k_mer_counts)
@@ -98,7 +98,7 @@ class Fasta():
         for item in ([ax.yaxis.label] + ax.get_yticklabels()):
             item.set_fontsize(40)
 
-        plt.title('4-mer frequency', fontdict={'fontsize':50})
+        plt.title('4-mer frequency', fontdict={'fontsize': 50})
         plt.xticks(rotation=90)
         ax.set(xlabel='k-mers in this fasta file')
 
