@@ -20,7 +20,8 @@ plt.ylabel('count')
 plt.show()
 
 train_part = train_df.loc[:,
-                        ['pos', 'reads_all', 'mismatches', 'insertions']][train_df.mismatches > train_df.mismatches.mean()]
+                          ['pos', 'reads_all',
+                            'mismatches', 'insertions']][train_df.mismatches > train_df.mismatches.mean()]
 train_part.to_csv('train_part.csv', index=False)
 
 yersinia = pd.read_csv("./Chromosomes_full.tsv", sep='\t')
