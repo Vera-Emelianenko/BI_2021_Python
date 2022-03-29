@@ -10,7 +10,7 @@ def fasta_iterator(path: str):
     A generator that iterates over sequences in a given file
     """
 
-    with open (path, 'r') as fasta_file:
+    with open(path, 'r') as fasta_file:
         # split the file into id+seq ('entry')
         entries = fasta_file.read().split('>')
         for entry in entries:
@@ -28,9 +28,9 @@ print(type(reader))
 
 # iterate over sequence id and sequence in './sequences.fasta'
 for id_, seq in reader:
-    print (id_, seq[:10])
+    print(id_, seq[:10])
 
-## Task 2
+# Task 2
 
 
 class MutatedFastaIterator:
@@ -62,7 +62,7 @@ class MutatedFastaIterator:
         """
         Initializes the object of the class. Accepts path to fasta file.
         """
-        
+
         self.path = path
         self.__cur_index = 0
 
