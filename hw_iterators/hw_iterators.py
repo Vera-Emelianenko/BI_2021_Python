@@ -82,7 +82,7 @@ class MutatedFastaIterator:
         seq = ('').join(entry.split('\n')[1:])
         seq_length = len(seq)
         # generate random index from 0 to seq_length-6
-        random_index=random.randrange(seq_length - 6)
+        random_index = random.randrange(seq_length - 6)
         # generate number of aminoacid that we want to remove, up to 5
         number_of_aa_deleted = random.randrange(5)
         # delete random number of aa (up to 5) from position random_index
